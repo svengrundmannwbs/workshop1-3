@@ -105,8 +105,9 @@ footer h2 {
 
 header > .cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   overflow: hidden;
+  align-items: stretch;
 }
 
 header > .cards > p {
@@ -118,14 +119,14 @@ header > .cards > p {
   max-width: 100%;
   overflow: hidden;
   transition-property: background-color font-size;
-  transition-duration: 1s;
-  transition-delay: 0.1s;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
 }
 
 header > .cards > p:hover {
   color: #ffffff;
   background-color: #cc1519;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 header > h3 {
@@ -270,17 +271,4 @@ textarea:focus {
 
 #contact form > button:hover {
   background-color: rgba(255, 225, 225, 0.4);
-}
-
-/*--- SIDE WRITING---*/
-.sidewriting {
-  font-family: "Script1";
-  font-weight: 100;
-  font-size: 50px;
-  color: rgba(255, 125, 0, 0.3);
-  top: 50%;
-  right: 50%;
-  position: absolute;
-  transform-origin: left;
-  transform: rotate(-10.1turn);
 }
