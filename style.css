@@ -1,0 +1,286 @@
+/*--- RESET ---*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*--- FONTS ---*/
+/* Alle fonts von https://fonts.google.com/ */
+@font-face {
+  font-family: "Dancing-Script";
+  src: url("fonts/dancing-script.regular.ttf");
+}
+
+@font-face {
+  font-family: "Script1";
+  src: url("fonts/script1-script-casual-normal.ttf");
+}
+
+@font-face {
+  font-family: "Slabo";
+  src: url("fonts/Slabo27px-Regular.ttf");
+}
+/*--- COLORS ---*/
+:root {
+  --main-bg-color: #fade4c;
+  --link-color: #cc1519;
+  --link-color2: #fff700;
+  --link-hover-color: #fffa00;
+  --card-hover-color: #ffffff69;
+}
+/*--- HTML ---*/
+html {
+  background-color: var(--main-bg-color);
+  scroll-behavior: smooth;
+}
+/*--- BODY ---*/
+body {
+  font-family: "Slabo";
+  font-size: 16px;
+}
+/*--- NAVIGATION ---*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  min-height: 200px;
+  background: rgb(204, 21, 25);
+  background: linear-gradient(
+    180deg,
+    rgba(204, 21, 25, 1) 0%,
+    rgba(250, 222, 76, 1) 74%
+  );
+}
+.nav-left {
+  /* LOGO */
+  display: flex;
+  align-items: center;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+ul,
+.grid-item {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  font-family: "Slabo";
+  font-weight: 700;
+  font-size: 22px;
+}
+li {
+  padding: 5px;
+  white-space: nowrap;
+  text-shadow: 2px 2px 1px white;
+}
+li > a {
+  color: var(--link-color);
+  text-decoration: none;
+  padding: 10px;
+}
+li > a:hover {
+  background: var(--link-hover-color);
+  border-radius: 10px;
+}
+
+/*--- HEADER ---*/
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+header > h2,
+#duck h2,
+#emergency h2,
+footer h2 {
+  font-family: "Script1";
+  font-weight: 100;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--link-color);
+  text-shadow: 2px 2px 4px black;
+}
+
+header > .cards {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+header > .cards > p {
+  border: 1px solid darkred;
+  background-color: rgba(255, 255, 255, 0.319);
+  border-radius: 12px;
+  margin: 10px;
+  padding: 25px;
+  max-width: 100%;
+  overflow: hidden;
+  transition-property: background-color font-size;
+  transition-duration: 1s;
+  transition-delay: 0.1s;
+}
+
+header > .cards > p:hover {
+  color: #ffffff;
+  background-color: #cc1519;
+  font-size: 1.2em;
+}
+
+header > h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  color: var(--link-color);
+  padding: 50px;
+  text-shadow: 2px 2px 4px black;
+}
+/*--- CONTENT ---*/
+#duck {
+  min-height: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 75px 0 75px 0;
+}
+
+#duck .text {
+  margin-right: 50px;
+  font-family: "Dancing-Script";
+  font-weight: 900;
+  font-size: 1.9em;
+}
+
+#duck .text p:nth-child(odd) {
+  color: var(--link-color);
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.duck img {
+  border-radius: 20px;
+}
+/*--- EMERGENCY ---*/
+#emergency {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 75px 0 75px 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  box-shadow: inset -5px -5px darkred;
+}
+
+.grid-item:hover {
+  box-shadow: inset -5px -5px white;
+}
+
+.grid-container > a {
+  background-color: var(--link-color);
+  text-decoration: none;
+  color: black;
+}
+
+.grid-container > a:hover {
+  text-decoration: underline overline;
+}
+
+.grid-container > a:nth-child(odd) {
+  background-color: var(--link-color2);
+}
+
+/*--- FOOTER ---*/
+footer {
+  min-height: 400px;
+  background-color: rgba(255, 125, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 75px 0 75px 0;
+}
+
+footer a > img {
+  width: 150px;
+}
+
+footer > a:hover {
+  box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+  border-radius: 50px;
+  background-color: white;
+  animation: rotation 1s infinite alternate-reverse;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+    background-color: white;
+  }
+  to {
+    transform: rotate(359deg);
+    background-color: red;
+  }
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+#contact > form > input,
+textarea,
+button {
+  font-family: "Slabo";
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.319);
+  border-radius: 20px;
+  font-size: 35px;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#contact form > textarea {
+  resize: none;
+}
+
+#contact form > input:focus,
+textarea:focus {
+  background-color: rgba(255, 225, 225, 0.4);
+}
+
+#contact form > button:hover {
+  background-color: rgba(255, 225, 225, 0.4);
+}
+
+/*--- SIDE WRITING---*/
+.sidewriting {
+  font-family: "Script1";
+  font-weight: 100;
+  font-size: 50px;
+  color: rgba(255, 125, 0, 0.3);
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  transform-origin: left;
+  transform: rotate(-10.1turn);
+}
